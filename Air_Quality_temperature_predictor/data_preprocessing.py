@@ -1,5 +1,3 @@
-import os
-import pickle 
 from pathlib import Path
 import pandas as pd
 
@@ -19,18 +17,6 @@ class DataTransformer(BaseEstimator, TransformerMixin):
     X['Time'] = X['Time'].apply(transform_time)
     X['Date'] = X['Date'].apply(transform_date)
     return X
-
-def split_stratified(dataset: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
-  dataset["Season"] = dataset["Date"].apply(lambda date: date.month)
-  dataset["Season"] = dataset["Season"].apply(transform_date)
-
-  print(dataset.shape)
-
-  train, test = train_test_split(dataset, test_size=0.2, stratify=dataset["Season"], random_state=42)
-
-  for split_ in (train, test):
-    split_.drop("Season", axis=1, inplace=True)
-  return train, test
 
 def transform_time(time: int) -> str:
   if time > 5 and time <=12:
