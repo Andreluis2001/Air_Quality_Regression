@@ -8,8 +8,6 @@ def test_model_cv(model: Any,
                   X_test: pd.DataFrame, 
                   y_test: pd.Series) -> np.ndarray:
     
-    print(f'Testing model: {model}\n')
-
     scores = -cross_val_score(
         model, 
         X_test, 
@@ -18,8 +16,4 @@ def test_model_cv(model: Any,
         cv=10
     )
 
-    print(f"Model: {model}\n")
-    print(f"Scores: {scores}\n")
-    print(f"Mean: {scores.mean()}\n")
-    print(f"Standard Deviation: {scores.std()}\n")
     return scores
