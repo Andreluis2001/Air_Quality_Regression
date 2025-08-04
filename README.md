@@ -1,7 +1,4 @@
-# Air Quality Regression
-## English
-
-This project serves as an MLOps practice exercise, using a dataset containing hourly averaged readings from five metal oxide chemical sensors embedded in an Air Quality Chemical Multisensor Device. The device was deployed at street level in a highly polluted area of an Italian city. Data were collected from March 2004 to February 2005, representing the longest publicly available field recordings from such air quality sensors. Ground truth hourly concentrations for CO, non-methane hydrocarbons, benzene, total nitrogen oxides (NOx), and nitrogen dioxide (NO2) were provided by a certified, co-located reference analyzer.
+# Previsão de dados ambientais 
 
 ## Português
 
